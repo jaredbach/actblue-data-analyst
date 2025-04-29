@@ -41,8 +41,8 @@ contributors_quarter_one_2020 as (
     inner join most_recent_filing_id as lr 
         on sa.fec_report_id = lr.report_id
     where upper(sa.form_type) = 'SA11AI'
-    order by random()
-    limit 1600000
+    order by random() -- This might slow down the query
+    limit 1600000 -- Limitting this number may not return the entire dataset
 ),
 
 -- Returns all FEC data from the 2020 cycle
@@ -64,6 +64,7 @@ contributions_by_state_and_committee as (
 )
 
 -- Final query combining contributions with committee data
+-- In this CTE, we unnested the select statements to make the code easier to read
 select
     c.cmte_nm
     , sum(case when c.cmte_st = b.contributor_state then total else 0 end) as in_state
