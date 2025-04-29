@@ -1,7 +1,7 @@
 ### Exercise 1
 In this exercise, I had to clean up a messy SQL script. I started by walking through each query to get a sense of what it was doing. Once I understood the logic, I started reorganizing things—flattening nested queries, creating CTEs to make the code easier to follow, and reformatting everything for readability (all lowercase, leading commas, etc.).
 
-One thing that stood out was how many `select` statements were used for such a simple final aggregation—it felt like a lot of extra steps. I also noticed the final join wasn’t really necessary if we were only looking at ActBlue donations and already knew ActBlue is based in MA. Skipping that join could’ve saved some processing time and computational cost.
+One thing that stood out was how many `select` statements were used for such a simple final aggregation—it felt like a lot of extra steps. I also noticed the final join wasn’t really necessary if we were only looking at ActBlue donations and already knew ActBlue is based in MA. Skipping that join could’ve saved some processing time and computational costs.
 
 ### Exercise 2  
 This exercise helped me better understand what the SQL was doing in exercise 1 and also reaffirmed that some of the joins felt kind of redundant. I used Python to join the two CSV files, which confirmed that most ActBlue donations come from out of state.
