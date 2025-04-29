@@ -45,7 +45,7 @@ contributors_quarter_one_2020 as (
     limit 1600000 -- Limitting this number may not return the entire dataset
 ),
 
--- Returns all FEC data from the 2020 cycle
+-- Returns all FEC committee data from the 2020 cycle
 FEC_Committee_Data_2020 as (
     select
         *
@@ -65,6 +65,7 @@ contributions_by_state_and_committee as (
 
 -- Final query combining contributions with committee data
 -- In this CTE, we unnested the select statements to make the code easier to read
+-- This will return the percentage of donations that were made in the state of Massachussetts, where ActBlue is based, as well as the total donations made in-state and out-of-state
 select
     c.cmte_nm
     , sum(case when c.cmte_st = b.contributor_state then total else 0 end) as in_state
