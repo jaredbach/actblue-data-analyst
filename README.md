@@ -13,3 +13,5 @@ As for insights: the biggest takeaway I had from this exercise was how exception
 ### Open Questions
 1. I’m still not sure how valuable the FEC data was in this analysis—it felt disconnected from the rest of the ActBlue dataset, but maybe I missed something?
 2. I think I’ve figured out the difference between `contribution_aggregate` and `contribution_amount`, but I’d love a gut check to make sure I did all the aggregations correctly.
+3. I am also a little confused about what constitues a committee. For example, why is it that there were a lot of donations to Actblue as an entity in my first graph? Can someone just donate money to Actblue without specifying a campaign or PAC?
+4. Additionally, I am confused why Actblue is considered a committee (i.e. the committee ID for Actblue is C00401224). I would have thought that only campaigns would be considered committees and not the platform that facilitates transactions.
